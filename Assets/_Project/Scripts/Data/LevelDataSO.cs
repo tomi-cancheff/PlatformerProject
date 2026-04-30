@@ -1,16 +1,17 @@
+// LevelDataSO.cs
+// ScriptableObject que define los datos de cada nivel.
+// Creá uno por nivel: LevelData_01, LevelData_02, etc.
+
 using UnityEngine;
 
-public class LevelDataSO : MonoBehaviour
+[CreateAssetMenu(menuName = "MiniPlatformer/LevelData")]
+public class LevelDataSO : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Level Info")]
+    public string levelName = "Level 01";
+    public int totalCoins = 5;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Next Level")]
+    // Nombre exacto de la escena a cargar al completar el nivel
+    public string nextSceneName = "Level_02";
 }
